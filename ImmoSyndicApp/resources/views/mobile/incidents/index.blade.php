@@ -7,11 +7,11 @@
             <h2 class="text-2xl font-bold text-slate-800 tracking-tight">Mes Incidents</h2>
             <p class="text-slate-500 text-sm italic">Suivi de vos signalements en temps réel</p>
         </div>
-        <button class="bg-primary text-white p-2.5 rounded-2xl shadow-lg shadow-primary/20 hover:scale-105 transition-transform">
+        <a href="{{ route('incidents.create') }}" class="bg-primary text-white p-2.5 rounded-2xl shadow-lg shadow-primary/20 hover:scale-105 transition-transform flex items-center justify-center">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
             </svg>
-        </button>
+        </a>
     </div>
     
     <div class="space-y-4">
@@ -48,12 +48,12 @@
                         </svg>
                         {{ $incident['localisation'] ?? 'Parties communes' }}
                     </div>
-                    <button class="text-primary text-xs font-bold uppercase tracking-widest flex items-center italic">
+                    <a href="{{ route('incidents.show', $incident['id']) }}" class="text-primary text-xs font-bold uppercase tracking-widest flex items-center italic">
                         Détails
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
                         </svg>
-                    </button>
+                    </a>
                 </div>
             </div>
         @empty
